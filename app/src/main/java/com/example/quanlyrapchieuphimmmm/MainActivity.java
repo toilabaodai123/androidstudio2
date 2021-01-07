@@ -36,6 +36,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
+    private PhimAdapter a;
     private List<Phim> phims;
     private RequestQueue request ;
 
@@ -73,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                         adapter = new PhimAdapter(phims,MainActivity.this);
                         recyclerView.setAdapter(adapter);
                     }
-
                     catch (JSONException e) {
                         Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
                     }

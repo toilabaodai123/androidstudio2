@@ -25,14 +25,14 @@
                 tools:srcCompat="@drawable/ic_launcher_background"
                 android:contentDescription="@string/a" />
             <TextView
-                android:id="@+id/tvIdphim"
+                android:id="@+id/tvchitietIdphim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:textColor="@color/black"
                 android:text="@string/id_phim"/>
             <TextView
-                android:id="@+id/tvTenphim"
+                android:id="@+id/tvchitietTenphim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -45,18 +45,11 @@
                 >
 
                 <Button
-                    android:id="@+id/btdatve"
-                    android:layout_width="150dp"
+                    android:layout_width="360dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="20dp"
                     android:text="@string/t_v"/>
 
-                <Button
-                    android:id="@+id/btchitietphim"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="50dp"
-                    android:text="@string/xem_chi_ti_t"/>
 
             </LinearLayout>
 

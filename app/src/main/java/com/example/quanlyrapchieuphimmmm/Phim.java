@@ -3,9 +3,10 @@ package com.example.quanlyrapchieuphimmmm;
 public class Phim {
 
 
-    public Phim(String tenphim, String id) {
-        this.tenphim = tenphim;
+    public Phim( String id,String tenphim) {
+
         this.id = id;
+        this.tenphim = tenphim;
     }
 
     private String tenphim;
