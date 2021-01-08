@@ -1,11 +1,18 @@
 package com.example.quanlyrapchieuphimmmm;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -15,6 +22,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,13 +41,14 @@ import java.util.List;
 
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private PhimAdapter a;
     private List<Phim> phims;
     private RequestQueue request ;
-
+    private TextView taikhoan;
+    private TextView hoten;
 
 
     @Override
@@ -57,6 +66,52 @@ public class MainActivity extends AppCompatActivity {
         request = Volley.newRequestQueue(this);
         loadJSON();
 
+
+        //Toolbar toolbar=findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
+
+
+        NavigationView navigationView=findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+        Intent intent =getIntent();
+        if( getIntent().getExtras() == null)
+        {
+            Toast.makeText(MainActivity.this,"a", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            String hotenn = intent.getStringExtra("hoten");
+            Toast.makeText(getApplicationContext(),hotenn, Toast.LENGTH_SHORT).show();
+            hoten=findViewById(R.id.tvhoten_menu);
+            //hoten.setText(hotenn);
+
+
+        }
+
+        }
+
+
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.nav_home:
+                break;
+            case R.id.nav_dangnhap:
+                Intent intentdn = new Intent(MainActivity.this,dangnhap.class);
+                startActivity(intentdn);
+                break;
+            case R.id.nav_dangky:
+                Intent intentdk = new Intent(MainActivity.this,dangky.class);
+                startActivity(intentdk);
+                break;
+            case R.id.nav_dangxuat:
+                break;
+        }
+
+        return true;
     }
 
     private void loadJSON() {
@@ -64,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),response.toString(),Toast.LENGTH_SHORT).show();
                 for(int i = 0 ; i< response.length();i++){
                     try {
                         JSONObject jsonObject = response.getJSONObject(i);

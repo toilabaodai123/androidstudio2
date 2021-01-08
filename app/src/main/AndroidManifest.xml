@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".ChiTietPhim" />
         <activity android:name=".Datve" />
+        <activity android:name=".dangnhap" />
+        <activity android:name=".dangky" />
     </application>
 
 </manifest>
