@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:title="Home"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/home_menu"
+            />
+        <item android:title="Đăng nhập"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/dangnhap_menu"
+            />
+        <item android:title="Đăng ký"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/dangky_menu"
+            />
+        <item android:title="Đăng xuất"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/dangxuat_menu"
+            android:visible="false"
+            />
+    </group>
+</menu>
