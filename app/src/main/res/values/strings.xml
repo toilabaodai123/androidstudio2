@@ -1,10 +1,5 @@
 <resources>
-    <string name="app_name">quanlyrapchieuphimmmm</string>
-    <string name="id_phim">id phim</string>
-    <string name="a">a</string>
-    <string name="ten_phim">ten phim</string>
-    <string name="t_v">Đặt vé</string>
-    <string name="xem_chi_ti_t">Xem chi tiết</string>
-    <string name="n_i_dung">Nội dung</string>
-    <string name="gh_3">Ghế 3</string>
+    <string name="app_name">drawerfragment</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

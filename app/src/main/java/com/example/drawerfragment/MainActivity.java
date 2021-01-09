@@ -10,6 +10,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView matkhauu;
     private TextView test;
     private TextView test2;
+    private TextView test3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,10 +65,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.container_fragment,new MainFragment());
         fragmentTransaction.commit();
-
-
-
-
+        View hoten = navigationView.getHeaderView(0);
+        test3=(TextView) hoten.findViewById(R.id.tvhoten);
     }
 
     @Override
@@ -106,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 break;
         }
+
         return true;
     }
 
@@ -166,4 +169,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             menu.findItem(R.id.dangnhap_menu).setVisible(false);
         }
     }
+
 }

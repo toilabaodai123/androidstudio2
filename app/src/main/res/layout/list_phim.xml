@@ -4,66 +4,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
 
 
-    <androidx.cardview.widget.CardView
+    <ImageView
+        android:id="@+id/imghinhphim"
+        android:layout_width="407dp"
+        android:layout_height="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tv_idphim"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:text="TextView"
+            android:textSize="50dp" />
 
-            <ImageView
-                android:id="@+id/imgHinhanh"
-                android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_tenphim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30dp" />
 
-                android:layout_height="wrap_content"
-                tools:srcCompat="@drawable/ic_launcher_background"
-                android:contentDescription="@string/a" />
-            <TextView
-                android:id="@+id/tvIdphim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/black"
-                android:text="@string/id_phim"/>
-            <TextView
-                android:id="@+id/tvTenphim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:text="@string/ten_phim"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
+    </LinearLayout>
 
-                <Button
-                    android:id="@+id/btdatve"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/t_v"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="90dp"
+        >
 
-                <Button
-                    android:id="@+id/btchitietphim"
-                    android:layout_width="150dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="50dp"
-                    android:text="@string/xem_chi_ti_t"/>
+        <Button
+            android:id="@+id/btdatve"
+            android:layout_width="145dp"
+            android:layout_height="64dp"
+            android:text="Đặt vé"
+            android:layout_marginRight="50dp"
+            />
 
-            </LinearLayout>
+        <Button
+            android:id="@+id/btxemchitiet"
+            android:layout_width="145dp"
+            android:layout_height="64dp"
+            android:text="Xem chi tiết"
+            android:onClick="xemchitiet"
+
+            />
+
+    </LinearLayout>
 
 
 
 
-        </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
+
+
+
 </LinearLayout>

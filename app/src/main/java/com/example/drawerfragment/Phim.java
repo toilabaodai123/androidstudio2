@@ -1,16 +1,12 @@
-package com.example.quanlyrapchieuphimmmm;
+package com.example.drawerfragment;
 
 public class Phim {
-
-
-    public Phim( String id,String tenphim) {
-
+    public Phim(String id, String tenphim) {
         this.id = id;
         this.tenphim = tenphim;
     }
 
-    private String tenphim;
-    private String id;
+    String id;
 
     public String getId() {
         return id;
@@ -20,8 +16,5 @@ public class Phim {
         return tenphim;
     }
 
-
-
-
-
+    String tenphim;
 }

@@ -2,61 +2,69 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-
-    <androidx.cardview.widget.CardView
+    <ImageView
+        android:id="@+id/imghinhchitietphim"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="200dp"
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+
+        >
+        <TextView
+            android:id="@+id/tv_idphim"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            >
+            android:text="TextView"
+            android:textSize="50dp"
+            />
 
-            <ImageView
-                android:id="@+id/imgHinhanh"
-                android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_tenphim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/tv_noidungphim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="asdsadsjdasdjasdasdlkas;dkl;asdkl;sakdl;kasjfdklasjflkdasjflkdasjklasjflkasdjflkasdjf;lkasjdflkasjdasj;fklasjdlkfjaskl;fjaslkdfjalasdjfl;asjdflkdjsalfjasdfkljas;dlkfjasdkljflaksdjflskajalks;jf"
+            android:textSize="20dp"
 
-                android:layout_height="wrap_content"
-                tools:srcCompat="@drawable/ic_launcher_background"
-                android:contentDescription="@string/a" />
-            <TextView
-                android:id="@+id/tvchitietIdphim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:textColor="@color/black"
-                android:text="@string/id_phim"/>
-            <TextView
-                android:id="@+id/tvchitietTenphim"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textColor="@color/black"
-                android:text="@string/ten_phim"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                >
-
-                <Button
-                    android:layout_width="360dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="20dp"
-                    android:text="@string/t_v"/>
+            />
 
 
-            </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="200dp"
+
+        >
+
+        <Button
+            android:id="@+id/btdatve"
+            android:layout_width="200dp"
+            android:layout_height="64dp"
+            android:text="Đặt vé"
+            />
+
+
+    </LinearLayout>
 
 
 
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
 </LinearLayout>
