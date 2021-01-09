@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.navigation.NavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -32,6 +34,7 @@ public class MainFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private List<Phim> phimList;
     private RequestQueue request;
+    private TextView test3;
 
 
 
@@ -45,10 +48,19 @@ public class MainFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         phimList=new ArrayList<>();
         request= Volley.newRequestQueue(v.getContext());
+        NavigationView navigationView = (NavigationView) getActivity().findViewById(R.id.navigation_view);
+        View headerView = navigationView.getHeaderView(0);
+        test3=(TextView)headerView.findViewById(R.id.tvtaikhoan);
+        String a =test3.getText().toString();
+        Toast.makeText(getContext(),a+"bbbbbb", Toast.LENGTH_SHORT).show();
         loadJSONPhim();
 
-
-
+/*
+        NavigationView navigationView;
+        navigationView=v.findViewById(R.id.navigation_view);
+        View hoten = navigationView.getHeaderView(0);
+        test3=(TextView) hoten.findViewById(R.id.tvhoten);
+*/
 
         return v;
 
@@ -70,7 +82,8 @@ public class MainFragment extends Fragment {
                         String id=object.getString("id");
                         String tenphim=object.getString("tenphim");
                         phimList.add(new Phim(id,tenphim));
-                        adapter = new PhimAdapter(phimList,recyclerView.getContext());
+                        String a =test3.getText().toString();
+                        adapter = new PhimAdapter(a,phimList,recyclerView.getContext());
                         recyclerView.setAdapter(adapter);
                     } catch (JSONException e) {
                         Toast.makeText(recyclerView.getContext(),e.toString(), Toast.LENGTH_SHORT).show();

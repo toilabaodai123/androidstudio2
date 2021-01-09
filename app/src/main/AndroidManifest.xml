@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Chitietphim" />
+        <activity android:name=".Datve" />
     </application>
 
 </manifest>

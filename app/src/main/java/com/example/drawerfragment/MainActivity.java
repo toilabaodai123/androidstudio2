@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView test;
     private TextView test2;
     private TextView test3;
+    public String a;
 
 
     @Override
@@ -67,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
         View hoten = navigationView.getHeaderView(0);
         test3=(TextView) hoten.findViewById(R.id.tvhoten);
+        a=test3.getText().toString();
     }
 
     @Override

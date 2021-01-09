@@ -10,20 +10,29 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
 public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
 
 
-    public PhimAdapter(List<Phim> phimList, Context context) {
+    public PhimAdapter(String tennguoidung, List<Phim> phimList, Context context) {
+        this.tennguoidung = tennguoidung;
         this.phimList = phimList;
         this.context = context;
     }
 
+    private String tennguoidung;
+
     private List<Phim> phimList;
     private Context context;
+    private TextView test3;
 
 
     @NonNull
@@ -31,6 +40,9 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
     public PhimAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.list_phim,parent,false);
+
+
+
         return new ViewHolder(v);
     }
 
@@ -60,7 +72,22 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
             datve=(Button)itemView.findViewById(R.id.btdatve);
             xemchitiet=(Button)itemView.findViewById(R.id.btxemchitiet);
             xemchitiet.setOnClickListener(this);
+            datve.setOnClickListener(this::onClick2);
 
+        }
+
+        private void onClick2(View view) {
+            if(1!=1){
+                AppCompatActivity activity =(AppCompatActivity)itemView.getContext();
+                Datvefragment datvee= new Datvefragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.container_fragment,datvee).addToBackStack(null).commit();
+            }
+            int position=getAdapterPosition();
+            Intent intent = new Intent(context,Datve.class);
+            intent.putExtra("id",phimList.get(position).getId());
+            intent.putExtra("tenphim",phimList.get(position).getTenphim());
+            intent.putExtra("taikhoan",tennguoidung);
+            context.startActivity(intent);
         }
 
         @Override
