@@ -124,7 +124,7 @@
     <Spinner
         android:id="@+id/snxuatchieu_datve"
         android:layout_width="166dp"
-        android:layout_height="29dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
@@ -135,7 +135,7 @@
     <Spinner
         android:id="@+id/snrap_datve"
         android:layout_width="166dp"
-        android:layout_height="29dp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.906"
