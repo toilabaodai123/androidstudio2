@@ -22,6 +22,7 @@
         </activity>
         <activity android:name=".Chitietphim" />
         <activity android:name=".Datve" />
+        <activity android:name=".gheActivity" />
     </application>
 
 </manifest>

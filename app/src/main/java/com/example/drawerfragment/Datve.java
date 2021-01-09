@@ -115,4 +115,8 @@ public class Datve extends AppCompatActivity {
         Volley.newRequestQueue(this).add(jsonArrayRequest);
     }
 
+    public void chonghe(View view) {
+        Intent intent = new Intent(this,gheActivity.class);
+        startActivity(intent);
+    }
 }
