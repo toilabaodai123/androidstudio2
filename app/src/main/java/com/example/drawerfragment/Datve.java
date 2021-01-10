@@ -117,6 +117,11 @@ public class Datve extends AppCompatActivity {
 
     public void chonghe(View view) {
         Intent intent = new Intent(this,gheActivity.class);
+        String abc1 = spinner.getSelectedItem().toString();
+        String abc2 = spinner2.getSelectedItem().toString();
+        intent.putExtra("dmy",abc1);
+        intent.putExtra("phim",tenphimm.getText().toString());
+        intent.putExtra("rap",abc2);
         startActivity(intent);
     }
 }

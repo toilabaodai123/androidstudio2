@@ -62,6 +62,7 @@ public class gheAdapter extends RecyclerView.Adapter<gheAdapter.ViewHolder> {
             idghe=itemView.findViewById(R.id.tvidghe);
             tenghe=itemView.findViewById(R.id.tvtenghe);
 
+
         }
     }
 }
