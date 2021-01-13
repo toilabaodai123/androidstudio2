@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
@@ -29,6 +30,7 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
     }
 
     private String tennguoidung;
+
 
     private List<Phim> phimList;
     private Context context;

@@ -18,5 +18,10 @@
             android:id="@+id/dangxuat_menu"
             android:visible="false"
             />
+        <item android:title="Thông tin cá nhân"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/thongtin_menu"
+            android:visible="false"
+            />
     </group>
 </menu>

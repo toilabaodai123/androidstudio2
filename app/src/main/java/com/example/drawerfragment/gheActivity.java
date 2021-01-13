@@ -3,6 +3,8 @@ package com.example.drawerfragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -24,17 +26,22 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class gheActivity extends AppCompatActivity {
+public class gheActivity extends AppCompatActivity implements gheInterface{
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private List<ghe> gheList;
     private RequestQueue request;
-    public String dmy,rap,phim,json,c;
+    public String dmy,rap,phim,taikhoan;
+    public TextView xa,xb,xc,xd,ak;
+    public ArrayList<String> testt;
+
+
 
 
 
@@ -44,11 +51,20 @@ public class gheActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ghe);
 
-
+        testt = new ArrayList<>();
         Intent intent2 =getIntent();
         dmy = intent2.getStringExtra("dmy");
         rap = intent2.getStringExtra("rap");
         phim = intent2.getStringExtra("phim");
+        taikhoan=intent2.getStringExtra("taikhoan");
+        xa=findViewById(R.id.tvtaikhoan_ghe);
+        xa.setText(taikhoan);
+        xb=findViewById(R.id.tvphim_ghe);
+        xb.setText(phim);
+        xc=findViewById(R.id.tv_xuatchieu_ghe);
+        xc.setText(dmy);
+        xd=findViewById(R.id.tvrap_ghe);
+        xd.setText(rap);
         //Toast.makeText(getApplicationContext(),dmy+" "+rap+" "+ phim, Toast.LENGTH_SHORT).show();
 
         recyclerView=findViewById(R.id.recyclerviewghe);
@@ -59,7 +75,7 @@ public class gheActivity extends AppCompatActivity {
         loaddsghe2();
     }
 
-    private void loaddsghe2() {
+    private void loaddsghe2()  {
 
         String url = "http://192.168.1.103/apitest2.php";
         StringRequest jsonArrayRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -75,7 +91,7 @@ public class gheActivity extends AppCompatActivity {
                         String tenghe=object.getString("tenghe");
                         gheList.add(new ghe(id,tenghe));
                     }
-                    adapter = new gheAdapter(gheList,getApplicationContext());
+                    adapter = new gheAdapter(gheList,getApplicationContext(),gheActivity.this);
                     recyclerView.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -100,7 +116,36 @@ public class gheActivity extends AppCompatActivity {
         Volley.newRequestQueue(this).add(jsonArrayRequest);
     }
 
-    public void testghe(View view) {
+
+    @Override
+    public void onItemClick(int position) {
+        String k = gheList.get(position).getId();
+        ak=findViewById(R.id.tvghedachon_ghe);
+        testt.add(k);
+        Toast.makeText(this,testt.toString(), Toast.LENGTH_SHORT).show();
+        if(ak.getText().toString().equalsIgnoreCase(""))
+        ak.append(k);
+
+        else
+        {
+            ak.append(" "+k);
+        }
+
+    }
+
+    @Override
+    public void onLongItemClick(int postition) {
+
+    }
+
+    public void testghe2(View view) {
+        Intent intent = new Intent(gheActivity.this , ThanhToan.class);
+        intent.putExtra("taikhoan",taikhoan);
+        intent.putExtra("phim",phim);
+        intent.putExtra("rap",rap);
+        intent.putExtra("xuatchieu",dmy);
+        intent.putExtra("ghe",ak.getText().toString());
+        startActivity(intent);
     }
 
 

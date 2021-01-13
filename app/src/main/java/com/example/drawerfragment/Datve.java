@@ -122,6 +122,7 @@ public class Datve extends AppCompatActivity {
         intent.putExtra("dmy",abc1);
         intent.putExtra("phim",tenphimm.getText().toString());
         intent.putExtra("rap",abc2);
+        intent.putExtra("taikhoan",taikhoan.getText().toString());
         startActivity(intent);
     }
 }

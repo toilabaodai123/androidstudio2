@@ -23,6 +23,8 @@
         <activity android:name=".Chitietphim" />
         <activity android:name=".Datve" />
         <activity android:name=".gheActivity" />
+        <activity android:name=".ThanhToan" />
+        <activity android:name=".ThongTinCaNhan" />
     </application>
 
 </manifest>

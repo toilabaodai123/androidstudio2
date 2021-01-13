@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView matkhauu;
     private TextView test;
     private TextView test2;
-    private TextView test3;
+    private TextView test3 , test4 ;
     public String a;
 
 
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
         View hoten = navigationView.getHeaderView(0);
         test3 = (TextView) hoten.findViewById(R.id.tvhoten);
+        test4=hoten.findViewById(R.id.tvtaikhoan);
         a = test3.getText().toString();
     }
 
@@ -114,6 +116,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentTransaction.replace(R.id.container_fragment, new MainFragment());
                 fragmentTransaction.commit();
 
+                break;
+            case R.id.thongtin_menu:
+                Intent intent = new Intent(MainActivity.this, ThongTinCaNhan.class);
+                String x = test3.getText().toString();
+                String xx = test4.getText().toString();
+                intent.putExtra("taikhoan",xx);
+                startActivity(intent);
                 break;
         }
 
@@ -170,10 +179,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             menu.findItem(R.id.dangnhap_menu).setVisible(true);
             menu.findItem(R.id.dangky_menu).setVisible(true);
             menu.findItem(R.id.dangxuat_menu).setVisible(false);
+            menu.findItem(R.id.thongtin_menu).setVisible(false);
         } else {
             menu.findItem(R.id.dangxuat_menu).setVisible(true);
             menu.findItem(R.id.dangky_menu).setVisible(false);
             menu.findItem(R.id.dangnhap_menu).setVisible(false);
+            menu.findItem(R.id.thongtin_menu).setVisible(true);
         }
     }
 

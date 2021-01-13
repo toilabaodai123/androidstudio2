@@ -1,4 +1,6 @@
 <?php
+	//ini_set('mssql.charset', 'UTF-8');
+	
 	$con=mysqli_connect("localhost","root","","laraone");
 	$response = array();
 	if($con){

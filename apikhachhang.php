@@ -1,4 +1,7 @@
 <?php
+
+	header('Access-Control-Allow-Origin: *');
+	header("Content-type: application/json; charset=utf-8");
 	$taikhoan_nhap=filter_input(INPUT_POST,"taikhoann");
 	$matkhau_nhap=filter_input(INPUT_POST,"matkhauu");
 
@@ -17,9 +20,9 @@
 				if(($taikhoan_nhap == $row['taikhoan'])&& ($matkhau_nhap == $row['matkhau']))
 					echo '1';
 			}
-			mysqli_close($con);
-			//echo json_encode($response,JSON_PRETTY_PRINT);
-			
+			echo json_encode($response,JSON_PRETTY_PRINT);
+			$test= "Phạm Thanh Bảo Đại";
+			echo $test;
 		}
 	}
 	else{

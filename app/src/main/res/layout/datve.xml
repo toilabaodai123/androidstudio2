@@ -59,32 +59,6 @@
         app:layout_constraintVertical_bias="0.422" />
 
     <TextView
-        android:id="@+id/tvgiadatve1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tổng tiền"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
-
-    <TextView
-        android:id="@+id/tvgiadatve2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="50000"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toEndOf="@+id/tvgiadatve1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
-
-    <TextView
         android:id="@+id/tvtenphimdatve2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -96,18 +70,6 @@
         app:layout_constraintStart_toEndOf="@+id/tvtenphimdatve1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.175" />
-
-    <Button
-        android:id="@+id/btdatve_datve"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Đặt vé"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.961" />
 
     <Button
         android:id="@+id/btchonghe_datve"
