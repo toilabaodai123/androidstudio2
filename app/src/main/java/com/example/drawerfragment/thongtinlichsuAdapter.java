@@ -35,6 +35,8 @@ public class thongtinlichsuAdapter extends RecyclerView.Adapter<thongtinlichsuAd
         thongtinlichsu tt = thongtinlichsuList.get(position);
         holder.tenphim.setText(tt.getTenphim());
         holder.thoigiandat.setText(tt.getThoigiandat());
+        holder.id.setText(tt.getId());
+
     }
 
     @Override
@@ -45,7 +47,7 @@ public class thongtinlichsuAdapter extends RecyclerView.Adapter<thongtinlichsuAd
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        public TextView tenphim , thoigiandat;
+        public TextView tenphim , thoigiandat ,id;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -53,6 +55,8 @@ public class thongtinlichsuAdapter extends RecyclerView.Adapter<thongtinlichsuAd
 
             tenphim=itemView.findViewById(R.id.tv_tenphim_lichsu);
             thoigiandat=itemView.findViewById(R.id.tv_thoigiandat_lichsu);
+            id = itemView.findViewById(R.id.tv_id_lichsu);
+
         }
     }
 

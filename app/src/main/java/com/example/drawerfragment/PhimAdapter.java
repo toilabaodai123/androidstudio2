@@ -32,6 +32,9 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
     private String tennguoidung;
 
 
+    private String idphim;
+
+
     private List<Phim> phimList;
     private Context context;
     private TextView test3;
@@ -99,6 +102,8 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
             Intent intent = new Intent(context,Chitietphim.class);
             intent.putExtra("id",phimList.get(position).getId());
             intent.putExtra("tenphim",phimList.get(position).getTenphim());
+            intent.putExtra("taikhoan",tennguoidung);
+            intent.putExtra("idphim",phimList.get(position).getId());
             context.startActivity(intent);
         }
     }

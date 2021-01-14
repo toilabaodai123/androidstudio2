@@ -34,7 +34,8 @@ public class MainFragment extends Fragment {
     private RecyclerView.Adapter adapter;
     private List<Phim> phimList;
     private RequestQueue request;
-    private TextView test3;
+    private TextView test3,test4;
+    public String b;
 
 
 

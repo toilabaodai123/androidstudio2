@@ -79,7 +79,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
                         JSONObject object = jsonArray.getJSONObject(i);
                         String tenphim = object.getString("tenphim");
                         String thoigiandat = object.getString("thoigiandat");
-                        thongtinlichsuList.add(new thongtinlichsu(tenphim,thoigiandat));
+                        thongtinlichsuList.add(new thongtinlichsu(tenphim,thoigiandat,Integer.toString(i)));
 
 
                     }
