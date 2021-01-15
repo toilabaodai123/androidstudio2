@@ -23,5 +23,10 @@
             android:id="@+id/thongtin_menu"
             android:visible="false"
             />
+        <item android:title="Tìm phim"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/timphim_menu"
+            />
+
     </group>
 </menu>

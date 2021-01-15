@@ -26,6 +26,7 @@
         <activity android:name=".ThanhToan" />
         <activity android:name=".ThongTinCaNhan" />
         <activity android:name=".SuaThongtin" />
+        <activity android:name=".TimPhim" />
     </application>
 
 </manifest>

@@ -124,6 +124,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.putExtra("taikhoan",xx);
                 startActivity(intent);
                 break;
+            case R.id.timphim_menu:
+                Intent intent2 = new Intent(MainActivity.this, TimPhim.class);
+                startActivity(intent2);
+                break;
         }
 
         return true;
