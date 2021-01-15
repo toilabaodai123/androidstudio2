@@ -2,6 +2,7 @@ package com.example.drawerfragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -131,5 +132,11 @@ public class ThongTinCaNhan extends AppCompatActivity {
             }
         };
         Volley.newRequestQueue(this).add(request);
+    }
+
+    public void suathongtin(View view) {
+        Intent intent = new Intent(ThongTinCaNhan.this,SuaThongtin.class);
+        intent.putExtra("taikhoan",taikhoan);
+        startActivity(intent);
     }
 }

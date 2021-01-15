@@ -23,13 +23,15 @@ import java.util.List;
 public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
 
 
-    public PhimAdapter(String tennguoidung, List<Phim> phimList, Context context) {
+    public PhimAdapter(String tennguoidung, List<Phim> phimList, Context context,String noidungphim) {
         this.tennguoidung = tennguoidung;
         this.phimList = phimList;
         this.context = context;
+        this.noidungphim=noidungphim;
     }
 
     private String tennguoidung;
+    private String noidungphim;
 
 
     private String idphim;
@@ -56,6 +58,8 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
         Phim listphim = phimList.get(position);
         holder.idphim.setText(listphim.getId());
         holder.tenphim.setText(listphim.getTenphim());
+        holder.tenloaiphim.setText(listphim.getTenloaiphim());
+        //holder.noidungphim.setText(listphim.getNoidungphim());
     }
 
     @Override
@@ -65,7 +69,7 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView idphim;
-        public TextView tenphim;
+        public TextView tenphim,tenloaiphim;
         public Button datve;
         public Button xemchitiet;
 
@@ -74,6 +78,8 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
 
             idphim=(TextView)itemView.findViewById(R.id.tv_idphim);
             tenphim=(TextView)itemView.findViewById(R.id.tv_tenphim);
+            //noidungphim = itemView.findViewById(R.id.tv_noidungphim);
+            tenloaiphim=itemView.findViewById(R.id.tv_tenloaiphim);
             datve=(Button)itemView.findViewById(R.id.btdatve);
             xemchitiet=(Button)itemView.findViewById(R.id.btxemchitiet);
             xemchitiet.setOnClickListener(this);
@@ -98,12 +104,13 @@ public class PhimAdapter extends RecyclerView.Adapter<PhimAdapter.ViewHolder> {
         @Override
         public void onClick(View v) {
             int position=getAdapterPosition();
-            Toast.makeText(context,"ABC"+position, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context,"ABC"+position, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(context,Chitietphim.class);
             intent.putExtra("id",phimList.get(position).getId());
             intent.putExtra("tenphim",phimList.get(position).getTenphim());
             intent.putExtra("taikhoan",tennguoidung);
             intent.putExtra("idphim",phimList.get(position).getId());
+            intent.putExtra("noidungphim",phimList.get(position).getNoidungphim());
             context.startActivity(intent);
         }
     }

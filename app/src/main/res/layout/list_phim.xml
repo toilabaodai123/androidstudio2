@@ -31,14 +31,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView"
-            android:textSize="50dp" />
+            android:textSize="50dp"
+            android:visibility="gone"
+            />
 
         <TextView
             android:id="@+id/tv_tenphim"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="TextView"
             android:textSize="30dp" />
+        <TextView
+            android:id="@+id/tv_tenloaiphim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="25dp" />
 
     </LinearLayout>
 

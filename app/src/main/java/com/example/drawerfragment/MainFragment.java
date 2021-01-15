@@ -35,7 +35,7 @@ public class MainFragment extends Fragment {
     private List<Phim> phimList;
     private RequestQueue request;
     private TextView test3,test4;
-    public String b;
+    public String b,noidungphim;
 
 
 
@@ -72,19 +72,21 @@ public class MainFragment extends Fragment {
 
     private void loadJSONPhim() {
         //Toast.makeText(recyclerView.getContext(),"a", Toast.LENGTH_SHORT).show();
-        String url="http://192.168.1.103/api.php";
+        String url="http://192.168.1.103/apiloadphim2.php";
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
-                Toast.makeText(recyclerView.getContext(),response.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(recyclerView.getContext(),response.toString(), Toast.LENGTH_SHORT).show();
                 for(int i = 0 ; i<response.length();i++){
                     try {
                         JSONObject object = response.getJSONObject(i);
                         String id=object.getString("id");
                         String tenphim=object.getString("tenphim");
-                        phimList.add(new Phim(id,tenphim));
+                        noidungphim =object.getString("noidungphim");
+                        String tenloaiphim = object.getString("tenloaiphim");
+                        phimList.add(new Phim(id,tenphim,noidungphim,tenloaiphim));
                         String a =test3.getText().toString();
-                        adapter = new PhimAdapter(a,phimList,recyclerView.getContext());
+                        adapter = new PhimAdapter(a,phimList,recyclerView.getContext(),noidungphim);
                         recyclerView.setAdapter(adapter);
                     } catch (JSONException e) {
                         Toast.makeText(recyclerView.getContext(),e.toString(), Toast.LENGTH_SHORT).show();

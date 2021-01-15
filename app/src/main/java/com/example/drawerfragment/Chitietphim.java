@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class Chitietphim extends AppCompatActivity {
     private TextView idphim ;
-    private TextView tenphimm ;
+    private TextView tenphimm,noidungphimm ;
     private TextView test3;
 
     private RecyclerView recyclerView;
@@ -61,6 +61,9 @@ public class Chitietphim extends AppCompatActivity {
         taikhoan = intent.getStringExtra("taikhoan");
         idx=id;
         String tenphim = intent.getStringExtra("tenphim");
+        String noidungphim = intent.getStringExtra("noidungphim");
+        noidungphimm=findViewById(R.id.tv_noidungphim);
+        noidungphimm.setText(noidungphim);
         Toast.makeText(this,id+"     "+tenphim, Toast.LENGTH_SHORT).show();
         idphim=(TextView) findViewById(R.id.tv_idphim);
         idphim.setText(id);
