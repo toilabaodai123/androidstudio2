@@ -27,6 +27,10 @@
             android:icon="@drawable/ic_login"
             android:id="@+id/timphim_menu"
             />
+        <item android:title="Phim sắp chiếu"
+            android:icon="@drawable/ic_login"
+            android:id="@+id/phimsapchieu_menu"
+            />
 
     </group>
 </menu>

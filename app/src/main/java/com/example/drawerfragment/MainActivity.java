@@ -128,6 +128,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent2 = new Intent(MainActivity.this, TimPhim.class);
                 startActivity(intent2);
                 break;
+            case R.id.phimsapchieu_menu:
+                Intent intent3 = new Intent(MainActivity.this, PhimSapChieuActivity.class);
+                startActivity(intent3);
+                break;
         }
 
         return true;

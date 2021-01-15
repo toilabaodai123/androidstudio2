@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/img_hinhphimsapchieu"
+        android:layout_width="407dp"
+        android:layout_height="412dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        app:srcCompat="@drawable/ic_launcher_background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/tv_idphim_sapchieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="50dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_tenphim_sapchieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="TextView"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/tv_tenloaiphim_sapchieu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="90dp"
+        >
+
+        <Button
+            android:id="@+id/btdatve_sapchieu"
+            android:layout_width="145dp"
+            android:layout_height="64dp"
+            android:text="Đặt vé"
+            android:layout_marginRight="50dp"
+            android:visibility="invisible"
+
+            />
+
+        <Button
+            android:id="@+id/btxemchitiet_sapchieu"
+            android:layout_width="145dp"
+            android:layout_height="64dp"
+            android:text="Xem chi tiết"
+
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>
