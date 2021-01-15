@@ -6,6 +6,7 @@
 	$taikhoan = filter_input(INPUT_POST,"taikhoan");
 	$rap = filter_input(INPUT_POST,"rap");
 	$ghe = filter_input(INPUT_POST,"ghe");
+	$tongtien=filter_input(INPUT_POST,"tongtien");
 	//$taikhoan_nhap=filter_input(INPUT_POST,"taikhoann");
 	
 	
@@ -57,7 +58,7 @@
 			
 			
 		/*--------------------------------------------------------------------------*/
-		$themve = "INSERT INTO ves (phim,khachhang,xuatchieu,rap) values(".$dataphim.",'".$taikhoan."',".$dataxuatchieu.",".$datarap.")";
+		$themve = "INSERT INTO ves (phim,khachhang,xuatchieu,rap,tongtienve) values(".$dataphim.",'".$taikhoan."',".$dataxuatchieu.",".$datarap.",".$tongtien.")";
 		if(!mysqli_query($con , $themve))
 		{
 			echo "1";

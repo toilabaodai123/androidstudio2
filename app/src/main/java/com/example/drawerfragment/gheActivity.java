@@ -37,7 +37,7 @@ public class gheActivity extends AppCompatActivity implements gheInterface{
     private RecyclerView.Adapter adapter;
     private List<ghe> gheList;
     private RequestQueue request;
-    public String dmy,rap,phim,taikhoan;
+    public String dmy,rap,phim,taikhoan,tongtien;
     public TextView xa,xb,xc,xd,ak;
     public ArrayList<String> testt;
 

@@ -61,6 +61,7 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:visibility="invisible"
                     android:id="@+id/btdatve"
                     android:layout_width="200dp"
                     android:layout_height="64dp"

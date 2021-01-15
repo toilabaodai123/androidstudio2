@@ -70,7 +70,7 @@ public class ThongTinCaNhan extends AppCompatActivity {
 
     private void loadlichsu() {
 
-        String url = "http://192.168.1.103/apiloadvetheotaikhoan.php";
+        String url = "http://192.168.1.103/apiloadvetheotaikhoan2.php";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

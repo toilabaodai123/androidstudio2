@@ -23,8 +23,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ThanhToan extends AppCompatActivity {
-    public String taikhoan , phim , rap , ghe ,xuatchieu;
-    public TextView taikhoann,phimm,rapp,ghee,xuatchieuu;
+    public String taikhoan , phim , rap , ghe ,xuatchieu,tongtien;
+    public TextView taikhoann,phimm,rapp,ghee,xuatchieuu,tongtienn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,9 +47,40 @@ public class ThanhToan extends AppCompatActivity {
         ghee.setText(ghe);
         xuatchieuu=findViewById(R.id.tv_xuatchieu_thanhtoan2);
         xuatchieuu.setText(xuatchieu);
+        tongtienn=findViewById(R.id.tv_tongtien_thanhtoan2);
+
+
+        loadgiatienphim();
 
     }
 
+    private void loadgiatienphim() {
+        String url = "http://192.168.1.103/apiloadgiatienphim.php";
+        StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                tongtienn.setText(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                ghe=ghee.getText().toString();
+                Map<String,String> params = new HashMap<>();
+                params.put("idphim",phim);
+                params.put("xuatchieu",xuatchieu);
+                params.put("ghe",ghe);
+
+                return params;
+            }
+        };
+        Volley.newRequestQueue(this).add(request);
+
+    }
 
 
     public void thanhtoan(View view) {
@@ -82,11 +113,13 @@ public class ThanhToan extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> params = new HashMap<>();
+                    tongtien=tongtienn.getText().toString();
                     params.put("dmy", xuatchieu);
                     params.put("rap", rap);
                     params.put("phim", phim);
                     params.put("taikhoan", taikhoan);
                     params.put("ghe", ghe);
+                    params.put("tongtien",tongtien);
                     return params;
                 }
             };
